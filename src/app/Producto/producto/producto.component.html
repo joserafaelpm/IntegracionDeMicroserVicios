@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrapper d-flex align-items-stretch">
+    <!-- {{>NavLat}} -->
+    <app-nav-lat></app-nav-lat>
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+       <!-- {{>Message}} -->
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Id</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Descripcion</th>
+                              <th scope="col">Precio</th>
+                              <th scope="col">Cantidad</th>
+                              <th scope="col">Categoria</th>
+                              <th scope="col">Agregar a Carrito</th>
+
+                              <th scope="col">Eliminar</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let producto of ListarProducto">
+                              <th>{{producto.id}}</th>
+                              <td>{{producto.nombre}}</td>
+                              <td>{{producto.descripcion}}</td>
+                              <td>{{producto.precio}}</td>
+                              <td>{{producto.cantidad}}</td>
+                              <td>{{producto.categoria}}</td>
+                              <td>
+                                <button type="button" class="btn btn-warning" (click)="buscarProducto(producto.id)">Agregar a Carrito</button>
+                            </td>
+                              <td>
+                                  <button (click)="eliminarProducto(producto.id)" type="button" class="btn btn-danger" routerLink="">Eliminar</button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                </div>
+            </div>
+            <div id="content" class="p-0">
+              <h1 class="mb-4 center"><b>Modificar Producto</b></h1>
+              <div class="wrapper">
+                <form class="login" action="/links/Admin/PrincipalRegistro">
+                  <p class="title">Producto</p>
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.id" type="text" name="id" placeholder="id" required />
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.nombre" type="text" name="nombre" maxlength="12"
+                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    placeholder="Nombre" autofocus required />
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.descripcion" type="text" name="descripcion" placeholder="Descripcion" required />
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.precio" type="number" name="precio" placeholder="Precio" required />
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.cantidad" type="number" name="cantidad" placeholder="Cantidad" required />
+                  <i class="fa fa-user"></i>
+                  <input [(ngModel)]="producto.categoria" type="text" name="categoria" placeholder="Categoria" required />
+                  <i class="fa fa-user"></i>
+                  <button (click)="modificar()">
+                    <i class="spinner"></i>
+                    <button (click)="modificar()" class="state">Guardar</button>
+                  </button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

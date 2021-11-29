@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrapper d-flex align-items-stretch">
+  <!-- {{>NavLat}} -->
+  <app-nav-lat></app-nav-lat>
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <!-- {{>Message}} -->
+    <div class="limiter">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Agregar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carrito of ListarCarrito">
+            <th>{{carrito.id}}</th>
+            <td>{{carrito.nombre}}</td>
+            <td>{{carrito.precio}}</td>
+            <td>{{carrito.cantidad}}</td>
+            <td>
+              <button (click)="eliminarCarrito(carrito.id)" type="button" class="btn btn-primary"
+                routerLink="">Agregar</button>
+            </td>
+            <td>
+              <button (click)="eliminarCarrito(carrito.id)" type="button" class="btn btn-danger"
+                routerLink="">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

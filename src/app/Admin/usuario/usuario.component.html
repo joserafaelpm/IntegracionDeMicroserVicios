@@ -1,0 +1,39 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="wrapper d-flex align-items-stretch">
+   <app-nav-lat></app-nav-lat>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+
+        <!-- <link rel="stylesheet" type="text/css" href="../../CSS/registro.css" /> -->
+
+            <h2 class="mb-4 center ">Registro</h2>
+
+        <div class="wrapper">
+
+            <form class="login" action="/links/Admin/PrincipalRegistro" method="POST" >
+                <p class="title">Persona</p>
+                <input type="number"  name="name" maxlength="12"   oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  placeholder="name" autofocus required/>
+                <i class="fa fa-user"></i>
+                <input type="text" name="username" placeholder="username" required/>
+                <i class="fa fa-user"></i>
+                <input type="text" name="password" placeholder="password" required/>
+                <i class="fa fa-user"></i>
+                 <!-- <input type="file" name="Foto" placeholder="Foto" />
+                <i class="fa fa-photo"></i> -->
+                <button>
+                    <i class="spinner"></i>
+                    <span class="state">Crear</span>
+                </button>
+            </form>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+<!-- {{>script}} -->

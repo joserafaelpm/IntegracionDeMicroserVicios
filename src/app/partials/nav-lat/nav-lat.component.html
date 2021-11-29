@@ -1,0 +1,45 @@
+<nav id="sidebar">
+  <div class="custom-menu">
+    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+    </button>
+  </div>
+  <div class="img bg-wrap text-center py-4" style="background-image: url(../../../assets/Images/bg_1.jpg);">
+    <div class="user-logo">
+      <div class="img" style="background-image: url(../../../assets/Images/bg_1.jpg);"></div>
+
+
+      <h3>Usuario</h3>
+
+
+    </div>
+  </div>
+  <ul class="list-unstyled components mb-5">
+    <li class="active">
+      <a routerLink="/home"><span class="fa fa- mr-3"></span> Home</a>
+    </li>
+
+    <li>
+      <a routerLink="/VerUser"><span class="fa fa-user mr-3"></span> Usuarios</a>
+    </li>
+    <li>
+      <a routerLink="/usuario"><span class="fa fa-user mr-3"></span> Registrar Usuario</a>
+    </li>
+    <li>
+      <a routerLink="/registrarProducto"><span class="fa fa-pencil mr-3"></span> Registrar Productos</a>
+    </li>
+    <li>
+      <a routerLink="/listaProducto"><span class="fa fa-pencil mr-3"></span> Productos</a>
+    </li>
+    <li>
+      <a routerLink="/carrito"><span class="fa fa-pencil mr-3"></span> Carrito de compras</a>
+    </li>
+    <li>
+      <a routerLink="/factura"><span class="fa fa-pencil mr-3"></span>Facturas</a>
+    </li>
+    <li>
+      <a routerLink=""><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+    </li>
+  </ul>
+
+</nav>
+<router-outlet></router-outlet>

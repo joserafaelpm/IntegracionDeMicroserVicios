@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="wrapper d-flex align-items-stretch">
+  <app-nav-lat></app-nav-lat>
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <!-- <link rel="stylesheet" type="text/css" href="../../CSS/registro.css" /> -->
+    <h1 class="mb-4 center"><b>Producto</b></h1>
+    <div class="wrapper">
+      <form class="login" action="/links/Admin/PrincipalRegistro">
+        <p class="title">Producto</p>
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.id" type="text" name="id" placeholder="id" required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.nombre" type="text" name="nombre" maxlength="12"
+          oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          placeholder="Nombre" autofocus required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.descripcion" type="text" name="descripcion" placeholder="Descripcion" required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.precio" type="number" name="precio" placeholder="Precio" required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.cantidad" type="number" name="cantidad" placeholder="Cantidad" required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="producto.categoria" type="text" name="categoria" placeholder="Categoria" required />
+        <i class="fa fa-user"></i>
+        <!-- <input type="file" name="Foto" placeholder="Foto" />
+                <i class="fa fa-photo"></i> -->
+        <button (click)="modificar()">
+          <i class="spinner"></i>
+          <button (click)="modificar()" class="state">Guardar</button>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- {{>script}} -->

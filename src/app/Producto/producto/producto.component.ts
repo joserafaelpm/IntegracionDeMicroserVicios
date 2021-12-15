@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from "./../../cargar-scripts.service";
 import { Producto } from 'src/app/Modelos/Producto';
+import { Carrito } from 'src/app/Modelos/Carrito';
 import { ProductoService } from 'src/app/Services/producto.service';
 import { Router } from '@angular/router';
+import {CarritoService} from 'src/app/Services/carrito.service';
 
 @Component({
   selector: 'app-producto',
@@ -14,7 +16,8 @@ export class ProductoComponent implements OnInit {
   //variable
   ListarProducto: Producto[]=[];
   producto: Producto= new Producto();
-  constructor( private _CargaScripts: CargarScriptsService, private ProductoService: ProductoService, private router: Router) {
+  carrito: Carrito= new Carrito();
+  constructor( private _CargaScripts: CargarScriptsService, private ProductoService: ProductoService, private CarritoService: CarritoService, private router: Router) {
 
     _CargaScripts.Carga(["jquery.min"]);
     _CargaScripts.Carga(["main"]);
@@ -38,11 +41,22 @@ export class ProductoComponent implements OnInit {
     });
   }
 
+  agregarCarrito(p: Producto){
+    this.carrito.nombre = p.nombre;
+    this.carrito.precio = p.precio;
+    this.carrito.cantidad = p.cantidad;
+    console.log(this.carrito);
+    this.CarritoService.addCarrito(this.carrito).subscribe((data: any) => {
+      console.log("Envie producto");
+    });
+  }
+
   eliminarProducto(id: string) {
      this.ProductoService.deleteProducto(id).subscribe((data: any) => {
        this.producto = data.body;
        return this.producto.id;
-     })
+     });
+     window.location.reload();
   }
 
   agregarProducto(p:Producto) {

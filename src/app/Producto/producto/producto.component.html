@@ -31,7 +31,7 @@
                               <td>{{producto.cantidad}}</td>
                               <td>{{producto.categoria}}</td>
                               <td>
-                                <button type="button" class="btn btn-warning" (click)="buscarProducto(producto.id)">Agregar a Carrito</button>
+                                <button type="button" class="btn btn-warning" (click)="agregarCarrito(producto)">Agregar a Carrito</button>
                             </td>
                               <td>
                                   <button (click)="eliminarProducto(producto.id)" type="button" class="btn btn-danger" routerLink="">Eliminar</button>

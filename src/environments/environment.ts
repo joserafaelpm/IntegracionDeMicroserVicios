@@ -5,6 +5,7 @@
 export const environment = {
   production: false
 };
+export const urlUser = "http://localhost:8004";
 export const urlProducto = "http://localhost:8006";
 export const urlCarrito = "http://localhost:8005";
 export const urlFactura = "http://localhost:8007";

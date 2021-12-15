@@ -12,7 +12,6 @@
             <th scope="col">Id</th>
             <th scope="col">Cliente</th>
             <th scope="col">Carrito</th>
-            <th scope="col">Agregar</th>
             <th scope="col">Eliminar</th>
           </tr>
         </thead>
@@ -21,10 +20,6 @@
             <th>{{factura.id}}</th>
             <td>{{factura.cliente}}</td>
             <td>{{factura.carrito}}</td>
-            <td>
-              <button (click)="eliminarFactura(factura.id)" type="button" class="btn btn-primary"
-                routerLink="">Agregar</button>
-            </td>
             <td>
               <button (click)="eliminarFactura(factura.id)" type="button" class="btn btn-danger"
                 routerLink="">Eliminar</button>

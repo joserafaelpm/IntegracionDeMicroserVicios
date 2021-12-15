@@ -20,7 +20,8 @@ const routes: Routes = [
   {path:"listaProducto", component:ProductoComponent},
   {path:"registrarProducto", component:RegistrarProductoComponent},
   {path:"actualizarProducto", component:ModificarProductoComponent},
-  {path:"factura", component:FacturaComponent}
+  {path:"factura", component:FacturaComponent},
+  {path:"login", component:UsuarioComponent}
 ];
 
 @NgModule({

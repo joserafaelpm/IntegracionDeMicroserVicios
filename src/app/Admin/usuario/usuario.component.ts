@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from "./../../cargar-scripts.service";
+import { Factura } from 'src/app/Modelos/Factura';
+import { FacturaService } from 'src/app/Services/factura.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',

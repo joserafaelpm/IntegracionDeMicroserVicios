@@ -26,8 +26,8 @@ export class CarritoService {
   }
 
   //agregar un Carrito
-  addCarrito(c: Carrito){
-    return this.http.post(this.url, c);
+  addCarrito(c: Carrito): Observable<any> {
+    return this.http.post<any>(this.url, c);
   }
 
   //eliminar

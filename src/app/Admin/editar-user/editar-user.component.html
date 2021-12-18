@@ -15,16 +15,14 @@
 
             <form class="login" >
                 <p class="title">Persona</p>
-                <input [(ngModel)]="usuario.id" name="id"  type="text"  placeholder="id" required/>
+                <input [(ngModel)]="usuario.id"  name='id' type="text"  placeholder="id" required/>
                 <i class="fa fa-user"></i>
                 <input [(ngModel)]="usuario.name" type="text" name="name" placeholder="name" required/>
                 <i class="fa fa-user"></i>
                 <input [(ngModel)]="usuario.username" type="text" name="username" placeholder="username" required/>
-                <i class="fa fa-user"></i>
-                <input [(ngModel)]="usuario.password"  name="password" type="text" placeholder="password" required/>
                  <!-- <input type="file" name="Foto" placeholder="Foto" />
                 <i class="fa fa-photo"></i> -->
-                <button class="state" (click)="agregarUsuario()">Crear Usuario</button>
+                <button class="state" (click)="EditarUsuario()">Editar Usuario</button>
             </form>
 
 

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CargarScriptsService } from "./../cargar-scripts.service";
-import { User } from 'src/app/Modelos/User';
-import { UsuarioService } from '../Services/usuario.service';
-import { Router } from '@angular/router';
 
+import { UsuarioService } from './../Services/usuario.service';
+import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/Modelos/User';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,19 +10,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  User: User={
-    username: '',
-    password: ''
-  };
-  constructor(private _CargaScripts: CargarScriptsService, private UsuarioService: UsuarioService, private router: Router) { }
+  constructor(private UsuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
-  }
-  login(user: User): void {
-    this.UsuarioService.getLogin(user).subscribe((data: any) => {
-      this.router.navigate(['/home']);
-    });
+
   }
 
+  isLoggedIn = false;
+  usuario: User={
+    username: '',
+    password:''
+  };
 
+
+  onLogin(): void{
+    console.log('login ', this.usuario.username + 'pass' + this.usuario.password);
+    this.UsuarioService.login(this.usuario).subscribe();
+    this.router.navigate(['/home']);
+  }
 }

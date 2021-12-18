@@ -1,1 +1,25 @@
-<p>registro-factura works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="wrapper d-flex align-items-stretch">
+  <app-nav-lat></app-nav-lat>
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <!-- <link rel="stylesheet" type="text/css" href="../../CSS/registro.css" /> -->
+    <h1 class="mb-4 center mr-3"><b>Facturacion</b></h1>
+    <div class="wrapper">
+      <form class="login" action="/links/Admin/PrincipalRegistro" method="POST">
+        <h1 class="title"><span class="fa fa-pencil-square mr-3"></span>Factura</h1>
+        <input [(ngModel)]="factura.cedula" type="number" name="cedula" placeholder="cedula" autofocus required />
+        <i class="fa fa-user-circle mr-3"></i>
+        <input [(ngModel)]="factura.nombre" type="text" name="nombre" placeholder="nombre" required />
+        <i class="fa fa-user"></i>
+        <input [(ngModel)]="factura.total" [value]="factura.total"  type="number" name="total" placeholder="total" required />
+        <i class="fa fa-money"></i>
+        <button (click)="listarCarritos()">
+          <i class="spinner"></i>
+          <button class="state">Registrar Factura</button>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- {{>script}} -->

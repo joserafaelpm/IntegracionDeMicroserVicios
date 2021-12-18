@@ -1,22 +1,22 @@
-import { UsuarioService } from './../../Services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { CargarScriptsService } from "./../../cargar-scripts.service";
-import { User } from 'src/app/Modelos/User';
+import { UsuarioService } from './../../Services/usuario.service';
 import { Router } from '@angular/router';
+import { User } from './../../Modelos/User';
 
 @Component({
-  selector: 'app-usuario',
-  templateUrl: './usuario.component.html',
+  selector: 'app-editar-user',
+  templateUrl: './editar-user.component.html',
   styleUrls: ['../../../assets/CSS/Menu.css','../../../assets/CSS/registro.css']
 })
-export class UsuarioComponent implements OnInit {
+export class EditarUserComponent implements OnInit {
+
 
 
   usuario: User={
     id: '',
     name: '',
-    username: '',
-    password: ''
+    username: ''
   };
 
 
@@ -27,11 +27,12 @@ export class UsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
-  agregarUsuario(){
-    console.log(this.usuario+'-------------------------------')
-    this.UsuarioService.addUser(this.usuario).subscribe();
+  EditarUsuario(){
+    this.UsuarioService.editUser(this.usuario).subscribe();
     this.router.navigate(['/VerUser']);
   }
+
 }

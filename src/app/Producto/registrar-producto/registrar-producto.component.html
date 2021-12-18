@@ -8,14 +8,14 @@
     <h1 class="mb-4 center"><b>Registro de Producto</b></h1>
     <div class="wrapper">
       <form class="login" action="/links/Admin/PrincipalRegistro" method="POST">
-        <h1 class="title">Producto</h1>
+        <h1 class="title"><span class="fa fa-shopping-basket mr-3"></span>Producto</h1>
         <input [(ngModel)]="producto.nombre" type="text" name="nombre" placeholder="Nombre" autofocus required />
         <i class="fa fa-user"></i>
         <input [(ngModel)]="producto.descripcion" type="text" name="descripcion" placeholder="Descripcion" required />
         <i class="fa fa-user"></i>
-        <input [(ngModel)]="producto.precio" type="number" name="precio" placeholder="Precio" required />
+        <input [(ngModel)]="producto.precio" type="number" name="precio" [min]="1"  placeholder="Precio" required />
         <i class="fa fa-user"></i>
-        <input [(ngModel)]="producto.cantidad" type="number" name="cantidad" placeholder="Cantidad" required />
+        <input [(ngModel)]="producto.cantidad" type="number" name="cantidad" value="1" [min]="1" placeholder="Cantidad" required />
         <i class="fa fa-user"></i>
         <input [(ngModel)]="producto.categoria" type="text" name="categoria" placeholder="Categoria" required />
         <i class="fa fa-user"></i>
@@ -23,7 +23,7 @@
                 <i class="fa fa-photo"></i> -->
         <button (click)="agregarProducto()">
           <i class="spinner"></i>
-          <button class="state">Crear</button>
+          <button class="state">Registrar Producto</button>
         </button>
       </form>
     </div>

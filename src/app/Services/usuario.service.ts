@@ -1,26 +1,23 @@
-import { User } from 'src/app/Modelos/User';
-import { urlUser } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../Modelos/User';
 import { Router } from '@angular/router';
+import { urlUser } from './../../environments/environment';
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UsuarioService {
-
- private url = `${urlUser}/api/User`;
- private url2 = `${urlUser}/api/auth`;
+ private url =`${urlUser}/api/user`;
+ private url2 =`${urlUser}/api/auth`;
   constructor(private http: HttpClient, private router: Router) {}
 
-  //getUsers
-  getUsers(): Observable<User[]> {
+  //getUsuarios
+  getUsuario(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
   }
 
-  getLogin(User: User): Observable<any> {
-    return this.http.post(this.url2+"/login", User);
-  }
 
   //return this.http.get(this.url);
 
@@ -36,11 +33,18 @@ export class UsuarioService {
 
   //eliminar
   deleteUser(id: string): Observable<any> {
-    return this.http.delete<any>(this.url + '/' + id);
+    console.log('eliminar'+ id)
+    return this.http.delete<any>(this.url + '/delete/'+ id);
+  }
+
+  login(User: User): Observable<boolean>{
+
+    return this.http.post<any>(`${this.url2}/login`,User);
   }
 
   //modificar un User
-  editUser(User: User){
-    return this.http.put(this.url, User);
+  editUser(User: User) {
+    return this.http.put(this.url + '/update/' , User);
   }
 }
+

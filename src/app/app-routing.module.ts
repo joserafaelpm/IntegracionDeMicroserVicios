@@ -10,17 +10,21 @@ import { ProductoComponent } from './Producto/producto/producto.component';
 import { RegistrarProductoComponent } from './Producto/registrar-producto/registrar-producto.component';
 import { ModificarProductoComponent } from './Producto/modificar-producto/modificar-producto.component';
 import { CarritoComponent } from './Carrito/carrito/carrito.component';
+import { RegistroFacturaComponent } from './Factura/registro-factura/registro-factura.component';
+import { EditarUserComponent } from './Admin/editar-user/editar-user.component';
 
 const routes: Routes = [
   {path:"", component:LoginComponent},
   {path:"home", component:HomeComponent},
   {path:"carrito", component:CarritoComponent},
   {path:"VerUser", component:MostrarUsuariosComponent},
+  {path:"editarUser", component:EditarUserComponent},
   {path:"usuario", component:UsuarioComponent},
   {path:"listaProducto", component:ProductoComponent},
   {path:"registrarProducto", component:RegistrarProductoComponent},
   {path:"actualizarProducto", component:ModificarProductoComponent},
   {path:"factura", component:FacturaComponent},
+  {path:"registroFactura", component:RegistroFacturaComponent},
   {path:"login", component:UsuarioComponent}
 ];
 

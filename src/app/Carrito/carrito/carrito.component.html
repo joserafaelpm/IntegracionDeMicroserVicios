@@ -5,7 +5,7 @@
   <!-- Page Content  -->
   <div id="content" class="p-4 p-md-5 pt-5">
     <!-- {{>Message}} -->
-    <div class="limiter">
+    <div class="limiter table-responsive-xxl">
       <table class="table">
         <thead>
           <tr>
@@ -13,6 +13,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
+            <th scope="col">Total</th>
             <th scope="col">Eliminar</th>
           </tr>
         </thead>
@@ -22,12 +23,19 @@
             <td>{{carrito.nombre}}</td>
             <td>{{carrito.precio}}</td>
             <td>{{carrito.cantidad}}</td>
-            <td>
-              <button (click)="eliminarCarrito(carrito.id)" type="button" class="btn btn-danger"
-                routerLink="">Eliminar</button>
-            </td>
+            <td>${{carrito.precio * carrito.cantidad}}</td>
+            <td><button (click)="eliminarCarrito(carrito.id)" type="button" class="btn btn-danger" routerLink="">Eliminar</button></td>
           </tr>
         </tbody>
+        <tfoot>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>Total:</th>
+          <th>{{ total  | currency:'' }}</th>
+          <th><button (click)="totalPago()" type="button" class="btn btn-outline-dark">Sumar</button></th>
+          <th><button routerLink="/registroFactura" type="button" class="btn btn-outline-dark">Factura</button></th>
+        </tfoot>
       </table>
     </div>
   </div>

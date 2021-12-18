@@ -1,5 +1,6 @@
 export class Factura {
-  id: string;
-  cliente?: string;
-  carrito?: string;
+  id?: string;
+  cedula?: number;
+  nombre?: string;
+  total?: number;
 }

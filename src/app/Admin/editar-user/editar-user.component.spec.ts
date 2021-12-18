@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegistroCarritoComponent } from './registro-carrito.component';
+import { EditarUserComponent } from './editar-user.component';
 
-describe('RegistroCarritoComponent', () => {
-  let component: RegistroCarritoComponent;
-  let fixture: ComponentFixture<RegistroCarritoComponent>;
+describe('EditarUserComponent', () => {
+  let component: EditarUserComponent;
+  let fixture: ComponentFixture<EditarUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistroCarritoComponent ]
+      declarations: [ EditarUserComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegistroCarritoComponent);
+    fixture = TestBed.createComponent(EditarUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

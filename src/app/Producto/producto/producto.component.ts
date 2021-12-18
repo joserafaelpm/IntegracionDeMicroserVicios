@@ -42,9 +42,10 @@ export class ProductoComponent implements OnInit {
   }
 
   agregarCarrito(p: Producto){
+    const cantidad = document.getElementById(`cantidad${p.id}`) as HTMLInputElement;
     this.carrito.nombre = p.nombre;
-    this.carrito.precio = p.precio;
-    this.carrito.cantidad = p.cantidad;
+    this.carrito.precio = Number(p.precio);
+    this.carrito.cantidad = Number(cantidad.value);
     console.log(this.carrito);
     this.CarritoService.addCarrito(this.carrito).subscribe((data: any) => {
       console.log("Envie producto");

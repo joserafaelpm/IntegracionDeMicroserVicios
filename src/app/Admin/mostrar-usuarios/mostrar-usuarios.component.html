@@ -1,63 +1,43 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="wrapper d-flex align-items-stretch">
-    <!-- {{>NavLat}} -->
-    <app-nav-lat></app-nav-lat>
-    <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
-       <!-- {{>Message}} -->
-        <div class="limiter">
-            <div class="container-table100">
-                <div class="wrap-table100">
-                    <div class="table100 ver1 m-b-110">
-                        <div class="table100-head">
-                            <table>
-                                <thead>
-                                    <tr class="row100 head">
-                                        <th class="cell100 column1">id</th>
-                                        <th class="cell100 column2">name</th>
-                                        <th class="cell100 column3">username</th>
-                                        <th class="cell100 column4"></th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
+  <!-- {{>NavLat}} -->
+  <app-nav-lat></app-nav-lat>
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+     <!-- {{>Message}} -->
+      <div class="limiter">
+          <div class="container-table100">
+              <div class="wrap-table100">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let User of ListarUsuarios">
+                            <th>{{User.id}}</th>
+                            <td>{{User.name}}</td>
+                            <td>{{User.username}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" (click)="buscarUsuario(User)" >Editar</button>
+                            </td>
+                            <td>
+                                <button (click)="eliminarUsuario(User.id+'')"  routerLink="/VerUser" type="button" class="btn btn-danger" >Eliminar</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
 
-                        <div class="table100-body js-pscroll">
-                            <table>
-                                <tbody>
-                                    <!-- {{#each usuarios}} -->
-                                    <tr class="row100 body">
-                                        <td class="cell100 column1">---</td>
-                                        <td class="cell100 column2">---</td>
-                                        <td class="cell100 column3">---</td>
-                                        <td class="cell100 column3">
-                                            <!-- <div style="inline> -->
-                                                 <!-- <a href="/links/Admin/Mostrar/{{Cedula}}" style="padding-right: 30px;">
-
-                                                    <ion-icon name="eye" size="large"></ion-icon>
-                                                </a>
-                                                <a href="/links/Admin/Editar/{{Cedula}}" style="padding-right: 30px;">
-
-                                                    <ion-icon name="pencil" size="large"></ion-icon>
-                                                </a>
-
-                                                <a href="/links/Admin/Usuarios/{{Cedula}}">
-                                                    <ion-icon name="trash" size="large"></ion-icon>
-                                                </a> -->
-
-                                            <!-- </div> -->
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
 

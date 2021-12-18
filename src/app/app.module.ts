@@ -18,9 +18,10 @@ import { ProductoComponent } from './Producto/producto/producto.component';
 import { RegistrarProductoComponent } from './Producto/registrar-producto/registrar-producto.component';
 import { ModificarProductoComponent } from './Producto/modificar-producto/modificar-producto.component';
 import { CarritoComponent } from './Carrito/carrito/carrito.component';
-import { RegistroCarritoComponent } from './Carrito/registro-carrito/registro-carrito.component';
 import { FacturaComponent } from './Factura/factura/factura.component';
 import { RegistroFacturaComponent } from './Factura/registro-factura/registro-factura.component';
+import { EditarUserComponent } from './Admin/editar-user/editar-user.component';
+
 //Fin Servicio
 
 @NgModule({
@@ -36,9 +37,9 @@ import { RegistroFacturaComponent } from './Factura/registro-factura/registro-fa
     RegistrarProductoComponent,
     ModificarProductoComponent,
     CarritoComponent,
-    RegistroCarritoComponent,
     FacturaComponent,
-    RegistroFacturaComponent
+    RegistroFacturaComponent,
+    EditarUserComponent,
   ],
   imports: [
     BrowserModule,

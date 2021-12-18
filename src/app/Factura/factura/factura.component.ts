@@ -14,7 +14,13 @@ export class FacturaComponent implements OnInit {
   //variable
   ListarFactura: Factura[]=[];
   factura: Factura= new Factura();
-  constructor(private _CargaScripts: CargarScriptsService, private FacturaService: FacturaService, private router: Router) { }
+  constructor(private _CargaScripts: CargarScriptsService, private FacturaService: FacturaService, private router: Router) {
+
+    _CargaScripts.Carga(["jquery.min"]);
+    _CargaScripts.Carga(["main"]);
+   }
+
+
 
   ngOnInit(): void {
     this.listarFacturas();
@@ -38,7 +44,8 @@ export class FacturaComponent implements OnInit {
      this.FacturaService.deleteFactura(id).subscribe((data: any) => {
        this.factura = data.body;
        return this.factura.id;
-     })
+     });
+     window.location.reload();
   }
 
   agregarFactura(p:Factura) {

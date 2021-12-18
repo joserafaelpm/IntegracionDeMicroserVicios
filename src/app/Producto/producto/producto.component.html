@@ -28,7 +28,7 @@
                               <td>{{producto.nombre}}</td>
                               <td>{{producto.descripcion}}</td>
                               <td>{{producto.precio}}</td>
-                              <td>{{producto.cantidad}}</td>
+                              <td><input type="number" id="cantidad{{producto.id}}" [value]="producto.cantidad" [min]="1" [max]="producto.cantidad"/></td>
                               <td>{{producto.categoria}}</td>
                               <td>
                                 <button type="button" class="btn btn-warning" (click)="agregarCarrito(producto)">Agregar a Carrito</button>

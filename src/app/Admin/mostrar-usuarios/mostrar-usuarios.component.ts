@@ -1,6 +1,9 @@
+import { User } from 'src/app/Modelos/User';
 import { Component, OnInit } from '@angular/core';
-
 import { CargarScriptsService } from "./../../cargar-scripts.service";
+import { UsuarioService } from './../../Services/usuario.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-mostrar-usuarios',
@@ -11,13 +14,43 @@ import { CargarScriptsService } from "./../../cargar-scripts.service";
 })
 export class MostrarUsuariosComponent implements OnInit {
 
-  constructor( private _CargaScripts: CargarScriptsService) {
+  //variable
+  ListarUsuarios: User[]=[];
+  user: User= new User();
+  constructor( private _CargaScripts: CargarScriptsService, private UsuarioService: UsuarioService, private router: Router) {
 
     _CargaScripts.Carga(["jquery.min"]);
     _CargaScripts.Carga(["main"]);
   }
 
   ngOnInit(): void {
+    this.listarUsuarios();
   }
+
+  listarUsuarios() {
+    this.UsuarioService.getUsuario().subscribe((data: any) => {
+      this.ListarUsuarios = data.body;
+      console.log(this.ListarUsuarios);
+    });
+  }
+
+  buscarUsuario(user: User) {
+    this.router.navigate(['/editarUser', user]);
+  }
+
+  eliminarUsuario(id:string) {
+    this.UsuarioService.deleteUser(id).subscribe()
+    this.router.navigate(['/home']);
+    window.location.reload();
+  }
+
+  agregarUsuario(p:User) {
+    this.UsuarioService.addUser(p);
+  }
+
+  editarUsuario(p: User) {
+    this.UsuarioService.editUser(p);
+  }
+
 
 }
